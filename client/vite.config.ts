@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  base: '/ThaiConsonants/',
   server: {
     proxy: {
       '/api': 'http://localhost:5000'
