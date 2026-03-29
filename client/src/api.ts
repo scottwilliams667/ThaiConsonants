@@ -8,6 +8,12 @@ export async function getNextItem(dataset:string): Promise<{ key: string; value:
   return res.json();
 }
 
+export async function getNextToneItem(classes: string): Promise<{ key: string; value: string } | null> {
+  const res = await fetch(`${BASE}/next/tones/${classes}`);
+  if (!res.ok) return null;
+  return res.json();
+}
+
 export async function addVocabItem(key: string, value: string): Promise<void> {
   await fetch(`${BASE}/vocab`, {
     method: 'POST',

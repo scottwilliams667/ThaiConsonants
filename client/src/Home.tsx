@@ -8,6 +8,7 @@ function Home() {
       <h1>Thai Learning</h1>
       <button onClick={() => navigate('/consonants')}>Consonants</button>
       <button onClick={() => navigate('/tones')}>Tones</button>
+      <button onClick={() => navigate('/vocab')}>Vocab</button>
     </div>
   );
 }

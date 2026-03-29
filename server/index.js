@@ -15,6 +15,25 @@ app.post('/api/store/words', async (req, res) => {
   res.json({ success: true });
 });
 
+app.get('/api/store/next/tones/:classes', async (req, res) => {
+  const classes = req.params.classes.split(','); // e.g. "LOW,MID" or "ALL"
+  const keys = await storage.keys();
+
+  let filtered;
+  if (classes.includes('ALL')) {
+    filtered = keys.filter(k => k.startsWith('tones:'));
+  } else {
+    filtered = keys.filter(k => classes.some(c => k.startsWith(`tones:${c}:`)));
+  }
+
+  if (filtered.length === 0) return res.status(404).json({ error: 'No items found' });
+
+  const randomKey = filtered[Math.floor(Math.random() * filtered.length)];
+  const value = await storage.getItem(randomKey);
+
+  res.json({ key: randomKey.split(':')[2], value });
+});
+
 // Get a value
 app.get('/api/store/next/:dataset', async (req, res) => {
   
