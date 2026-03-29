@@ -1,5 +1,25 @@
 {
-  "vocab:ปลา": "FISH"
+  "vocab:ปลา": "FISH",
+  "vocab:บอล": "BALL",
+  "vocab:แปด": "EIGHT",
+  "vocab:จอด": "TO PARK",
+  "vocab:กอด": "TO HUG",
+  "vocab:ยัง": "NOT YET",
+  "vocab:แมง": "INSECT",
+  "vocab:ออก": "EXIT",
+  "vocab:นาน": "A LONG TIME",
+  "vocab:นอน": "TO LAY DOWN",
+  "vocab:จับ": "TO GRAB",
+  "vocab:อ่าน": "TO READ",
+  "vocab:ยา": "MEDICINE",
+  "vocab:กิน": "TO EAT",
+  "vocab:ตาม": "TO FOLLOW",
+  "vocab:ปาก": "MOUTH",
+  "vocab:จาก": "FROM",
+  "vocab:ปิด": "TO CLOSE",
+  "vocab:บอก": "TO TELL",
+  "vocab:แมว": "CAT",
+  "vocab:ดอก": "FLOWER"
 }
 
 
