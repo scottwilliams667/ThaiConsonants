@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { addNewWord, getNextItem, getNextToneItem } from './api'
+import { addNewWord, getNextToneItem } from './api'
 
 type ClassFilter = 'ALL' | 'LOW' | 'MID' | 'HIGH' | 'MID,HIGH';
 
@@ -12,13 +12,13 @@ function Tones() {
   const [newWord, setNewWord] = useState('');
   const [added, setAdded] = useState(false);
 
-  const hardEndings = 'ดกบปะ'
-  const midClassLetters = 'อกดตบปจ';
-  const lowClassLetters = 'ยวมนลงรคชซทฟพธณญภฮ  ฒฬฌฆฑ';
-  const highClassLetters = 'ผฉขศษสถหฝ';
-  const shortVowels = 'ะ   ิ  ึ  ั  ุ  ';
-  const longVowels = 'อ า  ี  ื ู  ';
-  const allConsonants = 'อกดตบปจยวมนลงรคชซทฟพธณญภฮผฉขศษสถหฝ';
+  //const hardEndings = 'ดกบปะ'
+  //const midClassLetters = 'อกดตบปจ';
+  //const lowClassLetters = 'ยวมนลงรคชซทฟพธณญภฮ  ฒฬฌฆฑ';
+  //const highClassLetters = 'ผฉขศษสถหฝ';
+  //const shortVowels = 'ะ   ิ  ึ  ั  ุ  ';
+  //const longVowels = 'อ า  ี  ื ู  ';
+  //const allConsonants = 'อกดตบปจยวมนลงรคชซทฟพธณญภฮผฉขศษสถหฝ';
   //const toneMarks = ' ่ ้  ๊  ๋';
 
    useEffect(() => {
@@ -153,9 +153,12 @@ return (
     <div>
       <p>🔥 Streak: {streak}</p>
 
-      <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', marginBottom: '1rem', marginTop: '2rem' }}>
-        Filter: {filterButtons.map(f => (
-          <button
+      <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', marginBottom: '1rem', marginTop: '2rem', fontSize: '6rem' }}>
+        <div>
+          Filter:
+        </div>
+         {filterButtons.map(f => (
+          <button className='button-display'
             key={f}
             onClick={() => handleFilterChange(f)}
             style={{ fontWeight: filter === f ? 'bold' : 'normal', textDecoration: filter === f ? 'underline' : 'none' }}
@@ -165,20 +168,22 @@ return (
         ))}
       </div>
 
-      {message && <p>{message}</p>}
-
       {item && (
         <>
           <h1 style={{ fontSize: '6rem', marginBottom: '4rem', marginTop: '4rem' }}>{item.key}</h1>
           <div>
-            <button onClick={() => handleRating('LOW')}>LOW</button>
-            <button onClick={() => handleRating('MID')}>MID</button>
-            <button onClick={() => handleRating('HIGH')}>HIGH</button>
-            <button onClick={() => handleRating('RISE')}>RISE</button>
-            <button onClick={() => handleRating('FALL')}>FALL</button>
+            <button className='button-display' onClick={() => handleRating('LOW')}>LOW</button>
+            <button className='button-display' onClick={() => handleRating('MID')}>MID</button>
+            <button className='button-display' onClick={() => handleRating('HIGH')}>HIGH</button>
+            <button className='button-display' onClick={() => handleRating('RISE')}>RISE</button>
+            <button className='button-display' onClick={() => handleRating('FALL')}>FALL</button>
           </div>
         </>
       )}
+
+      
+      {message && <p>{message}</p>}
+
 
       <div style={{ marginTop: '2rem' }}>
         <input
