@@ -1,11 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      const redirect = new URLSearchParams(window.location.search).get('redirect');
+      if (redirect) {
+        window.history.replaceState(null, '', redirect);
+      }
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/ThaiConsonants/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thai App</title>
-    <script type="module" crossorigin src="/ThaiConsonants/assets/index-DKzyzi88.js"></script>
+    <script type="module" crossorigin src="/ThaiConsonants/assets/index-BXVfqJv1.js"></script>
     <link rel="stylesheet" crossorigin href="/ThaiConsonants/assets/index-C-kNfLZI.css">
   </head>
   <body>
